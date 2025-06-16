@@ -3,8 +3,24 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Classe responsável por gerar relatórios diários do zoológico.
+ * Cada relatório salva o estado dos animais em um arquivo de texto,
+ * armazenado em uma pasta com o nome do jogador.
+ *
+ * @author Rafael e Luana
+ * @version 1.0
+ */
 public class RelatorioStatus {
 
+    /**
+     * Gera um relatório com o estado atual de cada animal nas jaulas.
+     * O relatório é salvo em um arquivo de texto, organizado por dia e por jogador.
+     *
+     * @param jaulas Lista de jaulas do zoológico.
+     * @param dia Número do dia atual da simulação.
+     * @param nomeJogador Nome do jogador (utilizado para criar a pasta do relatório).
+     */
     public static void gerarRelatorio(ArrayList<Jaula> jaulas, int dia, String nomeJogador) {
         // Cria a pasta com o nome do jogador (caso não exista)
         File pasta = new File("relatorios/" + nomeJogador);
