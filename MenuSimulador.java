@@ -111,7 +111,7 @@ public class MenuSimulador {
         sc.close();
         nome.close();
         System.out.println("Sua semana de trabalho ja acabou! Passou voando!!");
-        System.out.println("Todos os status foram salvos e guardados na pasta repositorio! De uma olhada por lá!");
-        System.out.println("Muito obrigado por jogar!");
+        System.out.println("Todos os status foram salvos e guardados na pasta repositorio com seu nome! De uma olhada por lá!");
+        System.out.println("Muito obrigado por jogar "+ nomeJogador + "!");
     }
 }
