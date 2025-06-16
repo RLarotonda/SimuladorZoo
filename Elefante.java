@@ -12,13 +12,16 @@ public class Elefante extends Animal{
 
     public void interagir() {
         System.out.println("O elefante o comprimenta com a tromba");
-        setFelicidade(100);
+        aumentarFelicidade(50);
+        } else {
+            System.out.println("O elefante nao tem forca para interagir agora");
+        }
     }
 
     public void alimentar(Alimento alimento) {
         if(alimento == Alimento.VEGETAIS) {
             System.out.println("O elefante come os vegetais");
-            setFome(100);
+            diminuirFome(40);
         } else {
             throw new AlimentoErradoException("Elefantes não comem " + alimento.toString() + "!");
         }
