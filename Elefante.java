@@ -23,7 +23,7 @@ public class Elefante extends Animal{
             System.out.println("O elefante come os vegetais");
             diminuirFome(40);
         } else {
-            throw new AlimentoErradoException("Elefantes não comem " + alimento.toString() + "!");
+            throw new AlimentoErradoException("Elefantes não comem " + alimento.toString() + "! Sao vegetarianos");
         }
     }
 
