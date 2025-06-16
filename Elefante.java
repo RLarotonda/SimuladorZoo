@@ -34,7 +34,7 @@ public class Elefante extends Animal {
     public void interagir() {
         if (isSaude()) {
             System.out.println("O elefante o cumprimenta com a tromba");
-            Animal.aumentarFelicidade(this, 50);
+            aumentarFelicidade(50);
         } else {
             System.out.println("O elefante não tem força para interagir agora");
         }
