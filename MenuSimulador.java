@@ -1,22 +1,38 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Classe principal do simulador de zoológico.
+ * Permite ao jogador interagir com os animais e jaulas ao longo de 7 dias,
+ * podendo analisar, alimentar, interagir e tratar os animais, além de limpar as jaulas.
+ *
+ * @author Rafael e Luana
+ * @version 1.0
+ */
 public class MenuSimulador {
+
+    /**
+     * Método principal que executa o jogo.
+     * Controla o fluxo diário de interações com os animais e jaulas.
+     *
+     * @param args argumentos da linha de comando (não utilizados).
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Scanner nome = new Scanner(System.in);
         Cuidador cuidador = new Cuidador();
         Zoologico zoo = new Zoologico();
-
         int contador = 1;
 
         System.out.println("Bem-vindo(a) ao nosso Simulador de Zoologico!!");
         System.out.print("Como podemos chamar voce, jogador? ");
         String nomeJogador = nome.nextLine();
+
         System.out.println("Aqui voce pode, interagrir, alimentar,tratar e analizar os animais!");
         System.out.println("Fique atento com os status do animais e os alimente corretamente!");
         System.out.println("Boa sorte " + nomeJogador + "! Voce tem 7 dias para provar o seu valor!");
 
+        // Loop principal de 7 dias
         while (contador <= 7) {
             System.out.println("Dia " + contador);
 
@@ -24,6 +40,7 @@ public class MenuSimulador {
             for (Jaula jaula : jaulas) {
                 boolean continuarJaula = true;
 
+                // Menu de opções para cada jaula
                 while (continuarJaula) {
                     System.out.println("\n" + jaula.toString());
                     System.out.println("O que quer fazer aqui?");
@@ -50,7 +67,7 @@ public class MenuSimulador {
                                 System.out.print(a + " ");
                             }
                             System.out.println();
-                            String input = sc.next().toUpperCase(); // Coloca em letra maiuscula pro Enum identificar
+                            String input = sc.next().toUpperCase();
                             try {
                                 Alimento alimento = Alimento.valueOf(input);
                                 cuidador.alimentar(jaula.getAnimal(), alimento);
@@ -83,11 +100,14 @@ public class MenuSimulador {
                 }
             }
 
+            // Final do dia
             System.out.println("\nSeu turno acabou. Até amanha!!");
             RelatorioStatus.gerarRelatorio(jaulas, contador, nomeJogador);
             contador++;
             zoo.passarDia();
         }
+
+        // Fim do jogo
         sc.close();
         nome.close();
         System.out.println("Sua semana de trabalho ja acabou! Passou voando!!");
