@@ -54,8 +54,8 @@ public abstract class Animal {
     }
 
     /** Aumenta a felicidade, no máximo até 100. */
-    public static void aumentarFelicidade(Animal animal, int valor) {
-        animal.felicidade = Math.min(100, animal.felicidade + valor);
+    public void aumentarFelicidade(int valor) {
+        felicidade = Math.min(100,felicidade + valor);
     }
 
     /** Reduz a felicidade, no mínimo até 0. */
