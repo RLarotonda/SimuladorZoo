@@ -10,13 +10,14 @@ public class Elefante extends Animal{
         return especie;
     }
 
-    public void interagir() {
-        System.out.println("O elefante o comprimenta com a tromba");
-        aumentarFelicidade(50);
-        } else {
-            System.out.println("O elefante nao tem forca para interagir agora");
-        }
+   public void interagir() {
+    if (isSaude()) {
+        System.out.println("O elefante o cumprimenta com a tromba");
+        Animal.aumentarFelicidade(this, 50);
+    } else {
+        System.out.println("O elefante não tem força para interagir agora");
     }
+}
 
     public void alimentar(Alimento alimento) {
         if(alimento == Alimento.VEGETAIS) {
