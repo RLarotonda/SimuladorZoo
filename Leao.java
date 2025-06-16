@@ -12,13 +12,13 @@ public class Leao extends Animal{
 
     public void interagir() {
         System.out.println("O leao ruge alto");
-        setFelicidade(100);
+        aumentarFelicidade(50);
     }
 
     public void alimentar(Alimento alimento) throws AlimentoErradoException {
         if(alimento == Alimento.CARNE){
             System.out.println("O leao devora a carne");
-            setFome(100);
+            diminuirFome(40);
         } else {
             throw new AlimentoErradoException("Leões não comem " + alimento.toString() + "!");
         }
